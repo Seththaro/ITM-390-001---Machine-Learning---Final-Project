@@ -10,11 +10,14 @@
 
 # In[1]:
 
-python3 -m pip install opencv-python
-python3 -m pip install numpy
-python3 -m pip install scikit-learn
-python3 -m pip install seaborn
-python3 -m pip install matplotlib
+import subprocess
+
+# Install necessary packages
+subprocess.run(["python3", "-m", "pip", "install", "opencv-python"])
+subprocess.run(["python3", "-m", "pip", "install", "numpy"])
+subprocess.run(["python3", "-m", "pip", "install", "scikit-learn"])
+subprocess.run(["python3", "-m", "pip", "install", "seaborn"])
+subprocess.run(["python3", "-m", "pip", "install", "matplotlib"])
 
 import os
 import cv2
