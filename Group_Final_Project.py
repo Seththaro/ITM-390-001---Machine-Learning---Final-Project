@@ -10,14 +10,6 @@
 
 # In[1]:
 
-import subprocess
-
-# Install necessary packages
-subprocess.run(["pip", "install", "opencv-python"])
-subprocess.run(["pip", "install", "numpy"])
-subprocess.run(["pip", "install", "scikit-learn"])
-subprocess.run(["pip", "install", "seaborn"])
-subprocess.run(["pip", "install", "matplotlib"])
 
 import os
 import cv2
