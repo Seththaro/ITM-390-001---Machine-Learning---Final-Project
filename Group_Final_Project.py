@@ -13,11 +13,11 @@
 import subprocess
 
 # Install necessary packages
-subprocess.run(["python3", "-m", "pip", "install", "opencv-python"])
-subprocess.run(["python3", "-m", "pip", "install", "numpy"])
-subprocess.run(["python3", "-m", "pip", "install", "scikit-learn"])
-subprocess.run(["python3", "-m", "pip", "install", "seaborn"])
-subprocess.run(["python3", "-m", "pip", "install", "matplotlib"])
+subprocess.run(["pip", "install", "opencv-python"])
+subprocess.run(["pip", "install", "numpy"])
+subprocess.run(["pip", "install", "scikit-learn"])
+subprocess.run(["pip", "install", "seaborn"])
+subprocess.run(["pip", "install", "matplotlib"])
 
 import os
 import cv2
