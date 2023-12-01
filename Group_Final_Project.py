@@ -133,8 +133,5 @@ if uploaded_files:
         else:
             st.error(f"No face detected in the uploaded image: {uploaded_file.name}")
 
-# Streamlit testing function (Button to Test Model on Images)
-uploaded_folder = st.file_uploader("Choose a folder with test images...", type=["jpg", "jpeg", "png"], accept_multiple_files=False)
-
 if uploaded_folder:
     test_model_on_images(clf, scaler, pca, uploaded_folder)
