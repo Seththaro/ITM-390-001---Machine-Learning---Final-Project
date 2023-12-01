@@ -10,14 +10,13 @@
 
 # In[1]:
 
-import subprocess
+import streamlit as st
 
-# Install necessary packages
-subprocess.run(["pip", "install", "opencv-python"])
-subprocess.run(["pip", "install", "numpy"])
-subprocess.run(["pip", "install", "scikit-learn"])
-subprocess.run(["pip", "install", "seaborn"])
-subprocess.run(["pip", "install", "matplotlib"])
+st.run(["pip", "install", "opencv-python"])
+st.run(["pip", "install", "numpy"])
+st.run(["pip", "install", "scikit-learn"])
+st.run(["pip", "install", "seaborn"])
+st.run(["pip", "install", "matplotlib"])
 
 import os
 import cv2
