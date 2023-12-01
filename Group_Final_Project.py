@@ -10,11 +10,11 @@
 
 # In[1]:
 
-pip install opencv-python
-pip install numpy
-pip install scikit-learn
-pip install seaborn
-pip install matplotlib
+python3 -m pip install opencv-python
+python3 -m pip install numpy
+python3 -m pip install scikit-learn
+python3 -m pip install seaborn
+python3 -m pip install matplotlib
 
 import os
 import cv2
