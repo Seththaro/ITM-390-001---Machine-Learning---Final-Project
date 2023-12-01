@@ -10,6 +10,11 @@
 
 # In[1]:
 
+pip install opencv-python
+pip install numpy
+pip install scikit-learn
+pip install seaborn
+pip install matplotlib
 
 import os
 import cv2
