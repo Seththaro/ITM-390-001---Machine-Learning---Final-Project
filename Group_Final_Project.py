@@ -115,22 +115,26 @@ n_components = 1000
 features, pca = extract_features(faces_normalized, n_components)
 clf = train_svm(features, face_labels)
 
-# File Upload in Streamlit
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+# File Upload in Streamlit (Multiple Files)
+uploaded_files = st.file_uploader("Choose multiple images...", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
 
-if uploaded_file is not None:
-    img = Image.open(uploaded_file)
-    img_array = np.array(img.convert('L'))
-    normalized_face = preprocess_image(img_array, scaler, pca)
+if uploaded_files:
+    for uploaded_file in uploaded_files:
+        img = Image.open(uploaded_file)
+        img_array = np.array(img.convert('L'))
+        normalized_face = preprocess_image(img_array, scaler, pca)
 
-    if normalized_face is not None:
-        label = predict_label(clf, normalized_face)
-        st.image(img, caption=f"Uploaded Image", use_column_width=True)
-        st.write(f"Predicted Label: {label}")
-    else:
-        st.error("No face detected in the uploaded image.")
+        if normalized_face is not None:
+            label = predict_label(clf, normalized_face)
 
-# Streamlit testing function
-test_folder_path = r"C:\Users\Admin\Virtual Machine\Final Project\my_virtual_env\Test_Image_input"
-if st.button("Test Model on Images"):
-    test_model_on_images(clf, scaler, pca, test_folder_path)
+            # Display the uploaded image and predicted label
+            st.image(img, caption=f"Uploaded Image", use_column_width=True)
+            st.write(f"Predicted Label: {label}")
+        else:
+            st.error(f"No face detected in the uploaded image: {uploaded_file.name}")
+
+# Streamlit testing function (Button to Test Model on Images)
+uploaded_folder = st.file_uploader("Choose a folder with test images...", type=["jpg", "jpeg", "png"], accept_multiple_files=False)
+
+if uploaded_folder:
+    test_model_on_images(clf, scaler, pca, uploaded_folder)
