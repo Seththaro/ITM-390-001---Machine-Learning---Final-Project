@@ -132,6 +132,3 @@ if uploaded_files:
             st.write(f"Predicted Label: {label}")
         else:
             st.error(f"No face detected in the uploaded image: {uploaded_file.name}")
-
-if uploaded_folder:
-    test_model_on_images(clf, scaler, pca, uploaded_folder)
